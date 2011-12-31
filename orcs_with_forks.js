@@ -22,11 +22,12 @@ var orcsWithForks = {
 		this.renderer = anew( renderer );
 	},
 	start: function() {
+        
 		playerSprite = anew( sprite );
 		playerSprite.loadImagesFromDirectory( "images/bazil" );
 		this.game.addPlayerSprite(playerSprite);
 		this.game.generateLevel();
-		window.requestBestAnimationFrame( this.step().bind( this ) );
+		window.requestBestAnimationFrame( this.step.bind( this ) );
 		
 	},
 	timeSincePrevStep: function() {
@@ -48,7 +49,7 @@ var orcsWithForks = {
 		}
 		
 		this.timeAtStartOfPrevStep = this.timeNow;
-		window.requestBestAnimationFrame( this.step().bind( this ) );
+		window.requestBestAnimationFrame( this.step.bind( this ) );
 	}
 }
 
